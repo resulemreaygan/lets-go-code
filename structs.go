@@ -17,4 +17,9 @@ func main() {
 	v := Vertex{1, 2}
 	v.X = 4
 	fmt.Println(v.X)
+
+	w := Vertex{1, 2}
+	p := &w
+	p.X = 1e9 // (*p).X not necessary
+	fmt.Println(w)
 }
