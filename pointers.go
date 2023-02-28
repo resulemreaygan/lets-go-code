@@ -1,3 +1,7 @@
+/*
+Author: Resul Emre AYGAN
+*/
+
 package main
 
 import "fmt"
