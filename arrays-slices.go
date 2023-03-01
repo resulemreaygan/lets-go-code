@@ -9,6 +9,8 @@ import (
 	"strings"
 )
 
+var powArray = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
 func main() {
 	//Arrays
 	var a [2]string
@@ -157,6 +159,10 @@ func main() {
 	// If the backing array of f is too small to fit all the given values a bigger array will be allocated.
 	// The returned slice will point to the newly allocated array.
 
+	//Range
+	for i, v := range powArray {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
 }
 
 func printSlice(l []int) {
