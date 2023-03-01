@@ -138,6 +138,25 @@ func main() {
 		fmt.Printf("%s\n", strings.Join(board[i], " "))
 	}
 
+	//Appending to a slice
+	var f []int
+	printSlice(f)
+
+	// append works on nil slices.
+	f = append(f, 0)
+	printSlice(f)
+
+	// The slice grows as needed.
+	f = append(f, 1)
+	printSlice(f)
+
+	// We can add more than one element at a time.
+	f = append(f, 2, 3, 4)
+	printSlice(f)
+
+	// If the backing array of f is too small to fit all the given values a bigger array will be allocated.
+	// The returned slice will point to the newly allocated array.
+
 }
 
 func printSlice(l []int) {
