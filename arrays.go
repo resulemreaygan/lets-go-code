@@ -23,4 +23,22 @@ func main() {
 	fmt.Println(s)
 	// An array has a fixed size.
 	// A slice, on the other hand, is a dynamically-sized, flexible view into the elements of an array.
+
+	// Slices are like references to arrays
+	names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println(names)
+
+	aNew := names[0:2]
+	bNew := names[1:3]
+	fmt.Println(aNew, bNew)
+
+	bNew[0] = "XXX"
+	fmt.Println(aNew, bNew)
+	fmt.Println(names)
+	// Changing the elements of a slice modifies the corresponding elements of its underlying array.
 }
