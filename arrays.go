@@ -62,4 +62,16 @@ func main() {
 	}
 
 	fmt.Println(sNew)
+
+	// Slice defaults
+	k := []int{2, 3, 5, 7, 11, 13}
+
+	k = k[1:4]
+	fmt.Println(k)
+
+	k = k[:2]
+	fmt.Println(k)
+
+	k = k[1:]
+	fmt.Println(k)
 }
