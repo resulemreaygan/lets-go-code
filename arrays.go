@@ -99,8 +99,27 @@ func main() {
 	if h == nil {
 		fmt.Println("nil!")
 	}
+
+	//Creating a slice with make
+	m := make([]int, 5)
+	printSliceNew("m", m)
+
+	// Slices can be created with the built-in make function; this is how you create dynamically-sized arrays.
+	// To specify a capacity, pass a third argument to make
+	n := make([]int, 0, 5)
+	printSliceNew("n", n)
+
+	g := n[:2]
+	printSliceNew("g", g)
+
+	j := g[2:5]
+	printSliceNew("j", j)
 }
 
 func printSlice(l []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(l), cap(l), l)
+}
+
+func printSliceNew(s string, x []int) {
+	fmt.Printf("%s len=%d cap=%d %v\n", s, len(s), cap(x), x)
 }
