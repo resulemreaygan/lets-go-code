@@ -7,7 +7,7 @@ package main
 import "fmt"
 
 func main() {
-	// Arrays
+	//Arrays
 	var a [2]string
 
 	a[0] = "Hello"
@@ -18,13 +18,13 @@ func main() {
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 	fmt.Println(primes)
 
-	// Slices
+	//Slices
 	var s []int = primes[1:4]
 	fmt.Println(s)
 	// An array has a fixed size.
 	// A slice, on the other hand, is a dynamically-sized, flexible view into the elements of an array.
 
-	// Slices are like references to arrays
+	//Slices are like references to arrays
 	names := [4]string{
 		"John",
 		"Paul",
@@ -42,7 +42,7 @@ func main() {
 	fmt.Println(names)
 	// Changing the elements of a slice modifies the corresponding elements of its underlying array.
 
-	// Slice literals
+	//Slice literals
 	q := []int{2, 3, 5, 7, 11, 13}
 	fmt.Println(q)
 
@@ -63,7 +63,7 @@ func main() {
 
 	fmt.Println(sNew)
 
-	// Slice defaults
+	//Slice defaults
 	k := []int{2, 3, 5, 7, 11, 13}
 
 	k = k[1:4]
@@ -74,4 +74,25 @@ func main() {
 
 	k = k[1:]
 	fmt.Println(k)
+
+	//Slice length and capacity
+
+	l := []int{2, 3, 5, 7, 11, 13}
+	printSlice(l)
+
+	// Slice the slice to give it zero length.
+	l = l[:0]
+	printSlice(l)
+
+	// Extend its length.
+	l = l[:4]
+	printSlice(l)
+
+	// Drop its first two values.
+	l = l[2:]
+	printSlice(l)
+}
+
+func printSlice(l []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(l), cap(l), l)
 }
