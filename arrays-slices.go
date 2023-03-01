@@ -163,6 +163,19 @@ func main() {
 	for i, v := range powArray {
 		fmt.Printf("2**%d = %d\n", i, v)
 	}
+
+	//Range continued
+	powNew2 := make([]int, 10)
+
+	// If you only want the index, you can omit the second variable.
+	for i := range powNew2 {
+		powNew2[i] = 1 << uint(i) // == 2**i
+	}
+
+	// You can skip the index or value by assigning to _.
+	for _, value := range powNew2 {
+		fmt.Printf("%d\n", value)
+	}
 }
 
 func printSlice(l []int) {
