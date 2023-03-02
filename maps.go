@@ -33,4 +33,20 @@ func main() {
 
 	//Map literals continued
 	fmt.Println(k)
+
+	//Mutating Maps
+	t := make(map[string]int)
+
+	t["Answer"] = 42
+	fmt.Println("The value:", t["Answer"])
+
+	t["Answer"] = 48
+	fmt.Println("The value:", t["Answer"])
+
+	delete(t, "Answer")
+	fmt.Println("The value:", t["Answer"])
+
+	v, ok := t["Answer"] // Test that a key is present with a two-value assignment
+	fmt.Println("The value:", v, "Present?", ok)
+
 }
