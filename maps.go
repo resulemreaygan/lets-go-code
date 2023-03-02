@@ -17,6 +17,11 @@ var n = map[string]VertexNew{
 	"Google":    VertexNew{37.42202, -122.08408},
 }
 
+var k = map[string]VertexNew{
+	"Bell Labs": {40.68433, -74.39967},
+	"Google":    {37.42202, -122.08408},
+}
+
 func main() {
 	//Maps
 	m = make(map[string]VertexNew)
@@ -25,4 +30,7 @@ func main() {
 
 	//Map literals
 	fmt.Println(n)
+
+	//Map literals continued
+	fmt.Println(k)
 }
