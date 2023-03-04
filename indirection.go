@@ -51,4 +51,10 @@ func main() {
 	w := &Vertex3{4, 3}
 	fmt.Println(w.Abs2())
 	fmt.Println(AbsFunc(*w))
+
+	//Choosing a value or pointer receiver
+	r := &Vertex3{3, 4}
+	fmt.Printf("Before scaling: %+v, Abs: %v\n", r, r.Abs2())
+	r.Scale2(5)
+	fmt.Printf("After scaling: %+v, Abs: %v\n", r, r.Abs2())
 }
