@@ -40,6 +40,18 @@ func doCalc(c calc) {
 	fmt.Println(c.multiplication())
 }
 
+func increase(numb int) {
+	numb++
+	fmt.Println("increase -> value of numb: ", numb)
+	fmt.Println("increase -> address of numb: ", &numb)
+}
+
+func increaseNew(numb *int) {
+	*numb++
+	fmt.Println("increaseNew -> value of numb: ", *numb)
+	fmt.Println("increaseNew -> address of numb: ", &numb)
+}
+
 func main() {
 	var name string
 
@@ -115,4 +127,15 @@ func main() {
 	}
 
 	fmt.Println(cityMap)
+
+	g := 4
+	fmt.Println("value of g: ", g)
+	fmt.Println("address of g: ", &g)
+
+	increase(g)
+
+	increaseNew(&g)
+
+	fmt.Println("value of g: ", g)
+	fmt.Println("address of g: ", &g)
 }
