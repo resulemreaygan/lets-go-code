@@ -17,8 +17,15 @@ func (v Vertex2) Abs() float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
+func AbsNew(v Vertex2) float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
 func main() {
 	//Methods
 	v := Vertex2{3, 4}
 	fmt.Println(v.Abs())
+
+	//Methods are functions
+	fmt.Println(AbsNew(v))
 }
