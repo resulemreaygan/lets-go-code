@@ -30,6 +30,11 @@ func (f MyFloat) AbsNew2() float64 {
 	return float64(f)
 }
 
+func (v *Vertex2) Scale(f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 func main() {
 	//Methods
 	v := Vertex2{3, 4}
@@ -41,4 +46,8 @@ func main() {
 	//Methods continued
 	f := MyFloat(-math.Sqrt2)
 	fmt.Println(f.AbsNew2())
+
+	//Pointer receivers
+	v.Scale(10)
+	fmt.Println(v.Abs())
 }
