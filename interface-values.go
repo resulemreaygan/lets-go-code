@@ -18,6 +18,10 @@ type T2 struct {
 }
 
 func (t *T2) M2() {
+	if t == nil {
+		fmt.Println("<nil>")
+		return
+	}
 	fmt.Println(t.S)
 }
 
@@ -37,6 +41,18 @@ func main() {
 	i = F(math.Pi)
 	describe(i)
 	i.M2()
+
+	var j I2
+
+	var t *T2
+	j = t
+	describe(j)
+	j.M2()
+
+	j = &T2{"hello"}
+	describe(j)
+
+	j.M2()
 }
 
 func describe(i I2) {
