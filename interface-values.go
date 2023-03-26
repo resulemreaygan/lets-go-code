@@ -9,6 +9,10 @@ import (
 	"math"
 )
 
+type I3 interface {
+	M3()
+}
+
 type I2 interface {
 	M2()
 }
@@ -32,6 +36,7 @@ func (f F) M2() {
 }
 
 func main() {
+	//Interface values
 	var i I2
 
 	i = &T2{"Hello"}
@@ -42,6 +47,7 @@ func main() {
 	describe(i)
 	i.M2()
 
+	//Interface values with nil underlying values
 	var j I2
 
 	var t *T2
@@ -53,8 +59,19 @@ func main() {
 	describe(j)
 
 	j.M2()
+
+	//Nil interface values
+	var i3 I3
+	describe3(i3)
+	//Calling a method on a nil interface is a run-time error because
+	//there is no type inside the interface tuple to indicate which concrete method to call.
+	i3.M3()
 }
 
 func describe(i I2) {
 	fmt.Printf("(%v, %T)\n", i, i)
+}
+
+func describe3(i3 I3) {
+	fmt.Printf("(%v, %T)\n", i3, i3)
 }
