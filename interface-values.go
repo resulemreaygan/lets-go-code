@@ -65,7 +65,17 @@ func main() {
 	describe3(i3)
 	//Calling a method on a nil interface is a run-time error because
 	//there is no type inside the interface tuple to indicate which concrete method to call.
-	i3.M3()
+	//i3.M3()
+
+	//The empty interface
+	var i4 interface{}
+	describe4(i4)
+
+	i4 = 42
+	describe4(i4)
+
+	i4 = "Hello"
+	describe4(i4)
 }
 
 func describe(i I2) {
@@ -74,4 +84,8 @@ func describe(i I2) {
 
 func describe3(i3 I3) {
 	fmt.Printf("(%v, %T)\n", i3, i3)
+}
+
+func describe4(i4 interface{}) {
+	fmt.Printf("(%v, %T)\n", i4, i4)
 }
